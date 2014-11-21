@@ -3,6 +3,7 @@ execute pathogen#infect()
 "" General settings
 set nocompatible                " no compatibility with legacy vim
 syntax enable
+set synmaxcol=800               " don't try to highlight long lines
 set encoding=utf-8              " set default encoding to utf-8
 set showcmd                     " display incompatible commands
 filetype plugin indent on       " load file type plugins + indentation
