@@ -14,3 +14,6 @@ alias git-tmux='tmux new -s $(basename $pwd))'
 
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
+
+# git subcommands
+export PATH="$PATH:$HOME/dotfiles/git/commands"
