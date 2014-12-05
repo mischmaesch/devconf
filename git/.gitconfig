@@ -1,0 +1,21 @@
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[user]
+	name = mischmaesch
+	email = michael.schmaeschke@d-velop.de
+	signingkey = 6E407DCE
+
+[hub]
+protocol = https
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[core]
+    excludesfile = /opt/boxen/config/git/gitignore
+
+[alias]
+    news = log -p HEAD@{1}..HEAD@{0}
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
