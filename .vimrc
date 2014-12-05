@@ -74,3 +74,7 @@ inoremap jj <ESC>
 cmap w!! %!sudo tee > /dev/null %
 
 "" Plugins
+
+" ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
