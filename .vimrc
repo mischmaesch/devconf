@@ -11,6 +11,7 @@ set textwidth=79
 set colorcolumn=80
 set cursorline                  " Highlight the screen line of the cursor with CursorLine
 set relativenumber              " Show the line number relative to the line with the cursor.
+set clipboard=unnamed           " Use the os clipboard
 
 if has('gui_running')
     set background=light
@@ -38,7 +39,6 @@ set statusline+=%y              " filetype
 set statusline+=%=              " left/right separator
 set statusline+=%c,              " cursor column
 set statusline+=%l/%L           " cursor line / total lines
-
 
 "" Whitespace
 set nowrap                      " don't wrap lines
