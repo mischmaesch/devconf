@@ -15,7 +15,17 @@ helper = /opt/boxen/bin/boxen-git-credential
 
 [core]
     excludesfile = /opt/boxen/config/git/gitignore
+	autocrlf = input
+	safecrlf = true
 
 [alias]
     news = log -p HEAD@{1}..HEAD@{0}
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    unstage = reset HEAD
+    st = status -sb
+[push]
+	default = simple
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
