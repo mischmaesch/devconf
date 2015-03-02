@@ -15,6 +15,7 @@ set clipboard=unnamed           " Use the os clipboard
 
 if has('gui_running')
     set background=light
+    set guifont=Menlo\ for\ Powerline
 else
     set background=dark
 endif
@@ -27,18 +28,6 @@ let maplocalleader = ","
 
 "" Statusline
 set laststatus=2                " always show statusline as 2nd last line
-
-set statusline=                 " clear statusline when vimrc is reloaded
-set statusline=%t               " tail of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, " file encoding
-set statusline+=%{&ff}]         " file format
-set statusline+=%h              " help file flag
-set statusline+=%m              " modified flag
-set statusline+=%r              " read-only flag
-set statusline+=%y              " filetype
-set statusline+=%=              " left/right separator
-set statusline+=%c,              " cursor column
-set statusline+=%l/%L           " cursor line / total lines
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -78,3 +67,7 @@ cmap w!! %!sudo tee > /dev/null %
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" airline
+let g:airline_detect_paste = 1
+let g:airline_powerline_fonts = 1
