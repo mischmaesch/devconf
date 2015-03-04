@@ -64,10 +64,17 @@ cmap w!! %!sudo tee > /dev/null %
 
 "" Plugins
 
-" ctrlp
+" --- ctrlp ---
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" airline
+" --- airline ---
 let g:airline_detect_paste = 1
 let g:airline_powerline_fonts = 1
+
+" --- gitgutter ---
+" Require after having changed the colorscheme
+hi clear SignColumn
+" In vim-airline, only display 'hunks' if the diff is non-zero
+let g:airline#extensions#hunks#non_zero_only = 1
+
