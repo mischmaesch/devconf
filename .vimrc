@@ -36,6 +36,16 @@ endif
 colorscheme solarized
 
 set guioptions+=b               " Show horizontal scrollbar
+
+if exists('$ITERM_PROFILE')     " make tmux update the cursor shape
+    if exists('$TMUX')
+        let &t_SI = "\<Esc>[3 q"
+        let &t_EI = "\<Esc>[0 q"
+    else
+        let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+        let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    endif
+end
 " }}}
 
 " Folding {{{
@@ -66,7 +76,7 @@ nnoremap / /\v
 vnoremap / /\v
 " }}}
 
-" Mappings {{[
+" Mappings {{{
 
 " easier navigation between split windows
 nnoremap <c-j> <c-w>j
