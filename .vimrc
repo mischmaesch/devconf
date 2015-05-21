@@ -37,6 +37,8 @@ colorscheme solarized
 
 set guioptions+=b               " Show horizontal scrollbar
 
+set synmaxcol=1200              " Don't color long lines
+
 if exists('$ITERM_PROFILE')     " make tmux update the cursor shape
     if exists('$TMUX')
         let &t_SI = "\<Esc>[3 q"
@@ -90,6 +92,9 @@ inoremap jj <ESC>
 " Map : to ; and ; to , in normal mode
 nore ; :
 nore , ;
+
+" Disable ex-mode
+nnoremap Q <nop>
 
 " Bubble single lines
 nmap <C-Up> ddkP
