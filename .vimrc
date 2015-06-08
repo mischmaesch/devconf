@@ -59,8 +59,8 @@ set foldlevelstart=1            " start with fold level of 1
 " }}}
 
 
-let mapleader = ","
-let maplocalleader = ","
+let mapleader = "\<Space>"
+let maplocalleader = "\<Space>"
 " }}}
 
 " Statusline {{{
@@ -95,6 +95,11 @@ nore , ;
 
 " Disable ex-mode
 nnoremap Q <nop>
+
+" Map frequently used actions to Leader
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+nmap <Leader><Leader> V
 
 " Bubble single lines
 nmap <C-Up> ddkP
