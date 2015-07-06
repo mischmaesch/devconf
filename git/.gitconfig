@@ -23,6 +23,10 @@ helper = /opt/boxen/bin/boxen-git-credential
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     unstage = reset HEAD
     st = status -sb
+	co = checkout
+	cmm = commit -m
+	rh = reset HEAD
+	rhh = reset HEAD --hard
 [push]
 	default = simple
 [diff]
