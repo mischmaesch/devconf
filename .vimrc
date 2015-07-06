@@ -158,6 +158,16 @@ let g:airline#extensions#hunks#non_zero_only = 1
 map <Leader>n :NERDTreeToggle<CR>
 " close vim if NERDTree is the last open window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" --- Fugitive ---
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit -v -q<CR>
+nnoremap <Leader>ga :Gcommit --amend<CR>
+" vimdiff current vs git head
+nnoremap <Leader>gd :Gdiff<CR>
+" switch back to current file and closes fugitive buffer
+nnoremap <Leader>gD <c-w>h<c-w>c
+nnoremap <Leader>ge :Gedit<CR>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
