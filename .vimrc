@@ -101,6 +101,10 @@ nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
 nmap <Leader><Leader> V
 
+" Simpler movement to specific line
+nnoremap <CR> G
+nnoremap <BS> gg
+
 " Bubble single lines
 nmap <C-Up> ddkP
 nmap <C-Down> ddp
