@@ -105,6 +105,17 @@ nmap <Leader><Leader> V
 nnoremap <CR> G
 nnoremap <BS> gg
 
+" Quicker buffer selection
+nnoremap <Leader>g :e#<CR>
+
+let c = 1
+while c <= 9
+    execute "nnoremap \<Leader>" . c . " :" . c . "b\<CR>"
+    let c += 1
+endwhile
+nnoremap <Leader>0 :10b<CR>
+nnoremap <Leader>b :b
+
 " Bubble single lines
 nmap <C-Up> ddkP
 nmap <C-Down> ddp
