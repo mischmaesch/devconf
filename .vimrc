@@ -168,6 +168,14 @@ nnoremap <Leader>gd :Gdiff<CR>
 " switch back to current file and closes fugitive buffer
 nnoremap <Leader>gD <c-w>h<c-w>c
 nnoremap <Leader>ge :Gedit<CR>
+
+" --- Syntastic ---
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_ruby_checkers = ['mri']
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
