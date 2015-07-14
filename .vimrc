@@ -176,6 +176,12 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_ruby_checkers = ['mri']
+
+" --- Ack.vim ---
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+nnoremap K :Ack "<C-R><C-W>"<CR>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
