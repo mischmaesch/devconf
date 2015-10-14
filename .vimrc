@@ -160,6 +160,9 @@ endif
 let g:airline_detect_paste = 1
 let g:airline_powerline_fonts = 1
 
+" --- MiniBufExpl ---
+map <Leader>d :MBEbd<cr>
+
 " --- gitgutter ---
 " Require after having changed the colorscheme
 hi clear SignColumn
