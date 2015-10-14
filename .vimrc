@@ -10,11 +10,12 @@ filetype plugin indent on       " load file type plugins + indentation
 set textwidth=79
 set colorcolumn=80
 set cursorline                  " Highlight the screen line of the cursor with CursorLine
-set relativenumber              " Show the line number relative to the line with the cursor.
+set relativenumber              " Show the line number relative to the line with the cursor
+set number                      " Show the absolute line number for the current line
 set clipboard=unnamed           " Use the os clipboard
 
 " Spaces & Tabs {{{
-set softtabstop=4 shiftwidth=4  " indent by 4 spaces when pressing tab 
+set softtabstop=4 shiftwidth=4  " indent by 4 spaces when pressing tab
 set tabstop=8                   " tab character is still 8 spaces
 set expandtab                   " use spaces, not tabs
 set backspace=indent,eol,start  " backspace through everything in insert mode
