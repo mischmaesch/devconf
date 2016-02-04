@@ -8,28 +8,44 @@
 	signingkey = 6E407DCE
 
 [hub]
-protocol = https
+    protocol = https
 
 [credential]
-helper = /opt/boxen/bin/boxen-git-credential
+    helper = /opt/boxen/bin/boxen-git-credential
 
 [core]
     excludesfile = /opt/boxen/config/git/gitignore
-	autocrlf = input
-	safecrlf = true
+    autocrlf = input
+    safecrlf = true
 
 [alias]
     news = log -p HEAD@{1}..HEAD@{0}
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     unstage = reset HEAD
     st = status -sb
-	co = checkout
-	cmm = commit -m
-	rh = reset HEAD
-	rhh = reset HEAD --hard
+    co = checkout
+    c = commit
+    cmm = commit -m
+    rh = reset HEAD
+    rhh = reset HEAD --hard
+    f = fetch -p
+    p = push
+    dc = diff --cached
+    root = !pwd
 [push]
 	default = simple
 [diff]
 	tool = vimdiff
 [merge]
-	tool = vimdiff
+    tool = vimdiff
+    conflictstyle = diff3
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[github]
+	user = mischmaesch
