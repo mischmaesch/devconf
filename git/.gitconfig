@@ -50,3 +50,5 @@
 	required = true
 [github]
 	user = mischmaesch
+[commit]
+	template = /Users/mschma/dotfiles/git/.git-commit-template.txt
