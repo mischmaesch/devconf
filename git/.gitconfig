@@ -22,16 +22,22 @@
 [alias]
     news = log -p HEAD@{1}..HEAD@{0}
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    unstage = reset HEAD
+    branches = branch -a
+    tags = tag
+    stashes = stash list
+    unstage = reset HEAD --
+    discard = checkout --
+    uncommit = reset --mixed HEAD~
     st = status -sb
     co = checkout
     c = commit
     cmm = commit -m
+    amend = commit --amend
     rh = reset HEAD
     rhh = reset HEAD --hard
     f = fetch -p
     p = push
-    dc = diff --cached
+    precommit = diff --cached --diff-algorithm=minimal -w
     root = !pwd
 [push]
 	default = simple
