@@ -115,7 +115,11 @@ while c <= 9
     let c += 1
 endwhile
 nnoremap <Leader>0 :10b<CR>
-nnoremap <Leader>b :b
+nnoremap <Leader>b :CtrlPBuffer<CR>
+
+" tab through buffers
+nnoremap <Leader><Tab> :bnext<CR>
+nnoremap <Leader><S-Tab> :bprevious<CR>
 
 " Bubble single lines
 nmap <C-Up> ddkP
@@ -127,6 +131,10 @@ vmap <C-Down> xp`[V`]
 
 " Force saving filed that require root permission
 cmap w!! %!sudo tee > /dev/null %
+" }}}
+
+" Tags {{{
+setglobal tags=./tags;
 " }}}
 
 " Languages {{{
@@ -187,11 +195,16 @@ nnoremap <Leader>ge :Gedit<CR>
 " --- Syntastic ---
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_mode_map = { "mode": "passive" }
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_ruby_checkers = ['mri']
+let g:syntastic_ruby_exec = 'RBENV_VERSION=system ruby'
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
+let g:syntastic_javascript_checkers = ['eslint']
+
+nnoremap <Leader>c :SyntasticCheck<CR>
 " --- Ack.vim ---
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
