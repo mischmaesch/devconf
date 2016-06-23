@@ -1,24 +1,9 @@
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
 [user]
-	name = mischmaesch
-	email = michael.schmaeschke@d-velop.de
-	signingkey = 6E407DCE
-
-[hub]
-    protocol = https
-
-[credential]
-    helper = /opt/boxen/bin/boxen-git-credential
-
+    name = mischmaesch
 [core]
-    excludesfile = /opt/boxen/config/git/gitignore
     autocrlf = input
     safecrlf = true
     ignorecase = false
-
 [alias]
     news = log -p HEAD@{1}..HEAD@{0}
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -40,21 +25,21 @@
     precommit = diff --cached --diff-algorithm=minimal -w
     root = !pwd
 [push]
-	default = simple
+    default = simple
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [merge]
     tool = vimdiff
     conflictstyle = diff3
+[filter "media"]
+    required = true
+    clean = git media clean %f
+    smudge = git media smudge %f
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+    clean = git hawser clean %f
+    smudge = git hawser smudge %f
+    required = true
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
-[github]
-	user = mischmaesch
-[commit]
-	template = /Users/mschma/dotfiles/git/.git-commit-template.txt
+    clean = git lfs clean %f
+    smudge = git lfs smudge %f
+    required = true
